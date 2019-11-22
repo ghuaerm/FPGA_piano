@@ -1,0 +1,18 @@
+Fitter Status : Successful - Wed Dec 21 17:07:33 2016
+Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 SJ Full Version
+Revision Name : Electric_Piano
+Top-level Entity Name : Electric_Piano
+Family : MAX 10
+Device : 10M02SCM153I7G
+Timing Models : Advance
+Total logic elements : 162 / 2,304 ( 7 % )
+    Total combinational functions : 155 / 2,304 ( 7 % )
+    Dedicated logic registers : 60 / 2,304 ( 3 % )
+Total registers : 60
+Total pins : 11 / 112 ( 10 % )
+Total virtual pins : 0
+Total memory bits : 0 / 110,592 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 32 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0

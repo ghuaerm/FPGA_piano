@@ -1,0 +1,92 @@
+Assembler report for Electric_Piano
+Wed Dec 21 17:07:39 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Assembler Summary
+  3. Assembler Settings
+  4. Assembler Generated Files
+  5. Assembler Device Options: F:/MAX10_STEP/Electric_Piano/output_files/Electric_Piano.sof
+  6. Assembler Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; Assembler Summary                                             ;
++-----------------------+---------------------------------------+
+; Assembler Status      ; Successful - Wed Dec 21 17:07:39 2016 ;
+; Revision Name         ; Electric_Piano                        ;
+; Top-level Entity Name ; Electric_Piano                        ;
+; Family                ; MAX 10                                ;
+; Device                ; 10M02SCM153I7G                        ;
++-----------------------+---------------------------------------+
+
+
++----------------------------------+
+; Assembler Settings               ;
++--------+---------+---------------+
+; Option ; Setting ; Default Value ;
++--------+---------+---------------+
+
+
++--------------------------------------------------------------+
+; Assembler Generated Files                                    ;
++--------------------------------------------------------------+
+; File Name                                                    ;
++--------------------------------------------------------------+
+; F:/MAX10_STEP/Electric_Piano/output_files/Electric_Piano.sof ;
++--------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Assembler Device Options: F:/MAX10_STEP/Electric_Piano/output_files/Electric_Piano.sof ;
++----------------+-----------------------------------------------------------------------+
+; Option         ; Setting                                                               ;
++----------------+-----------------------------------------------------------------------+
+; Device         ; 10M02SCM153I7G                                                        ;
+; JTAG usercode  ; 0x00043670                                                            ;
+; Checksum       ; 0x00043670                                                            ;
++----------------+-----------------------------------------------------------------------+
+
+
++--------------------+
+; Assembler Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Wed Dec 21 17:07:37 2016
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Electric_Piano -c Electric_Piano
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 629 megabytes
+    Info: Processing ended: Wed Dec 21 17:07:39 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

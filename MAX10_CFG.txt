@@ -1,0 +1,20 @@
+To			,	Location
+
+//FPGA 时钟
+clk_in			,	PIN_J5
+
+//按键模块
+
+rst_n_in			,	PIN_J14
+
+//双列直插GPIO管脚，按照外设功能命名
+col[0]				,	PIN_P7
+col[1]				,	PIN_P8
+col[2]				,	PIN_P9
+col[3]				,	PIN_R9
+row[0]				,	PIN_P15
+row[1]				,	PIN_R14
+row[2]				,	PIN_P12
+row[3]				,	PIN_R11
+
+piano_out				,	PIN_B15

@@ -1,0 +1,721 @@
+TimeQuest Timing Analyzer report for Electric_Piano
+Wed Dec 21 17:07:55 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 100C Model Fmax Summary
+  6. Slow 1200mV 100C Model Setup Summary
+  7. Slow 1200mV 100C Model Hold Summary
+  8. Slow 1200mV 100C Model Recovery Summary
+  9. Slow 1200mV 100C Model Removal Summary
+ 10. Slow 1200mV 100C Model Minimum Pulse Width Summary
+ 11. Setup Times
+ 12. Hold Times
+ 13. Clock to Output Times
+ 14. Minimum Clock to Output Times
+ 15. Slow 1200mV -40C Model Fmax Summary
+ 16. Slow 1200mV -40C Model Setup Summary
+ 17. Slow 1200mV -40C Model Hold Summary
+ 18. Slow 1200mV -40C Model Recovery Summary
+ 19. Slow 1200mV -40C Model Removal Summary
+ 20. Slow 1200mV -40C Model Minimum Pulse Width Summary
+ 21. Setup Times
+ 22. Hold Times
+ 23. Clock to Output Times
+ 24. Minimum Clock to Output Times
+ 25. Fast 1200mV -40C Model Setup Summary
+ 26. Fast 1200mV -40C Model Hold Summary
+ 27. Fast 1200mV -40C Model Recovery Summary
+ 28. Fast 1200mV -40C Model Removal Summary
+ 29. Fast 1200mV -40C Model Minimum Pulse Width Summary
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Signal Integrity Metrics (Slow 1200mv n40c Model)
+ 42. Signal Integrity Metrics (Slow 1200mv 100c Model)
+ 43. Signal Integrity Metrics (Fast 1200mv n40c Model)
+ 44. Setup Transfers
+ 45. Hold Transfers
+ 46. Report TCCS
+ 47. Report RSKM
+ 48. Unconstrained Paths
+ 49. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name      ; Electric_Piano                                      ;
+; Device Family      ; MAX 10                                              ;
+; Device Name        ; 10M02SCM153I7G                                      ;
+; Timing Models      ; Advance                                             ;
+; Delay Model        ; Combined                                            ;
+; Rise/Fall Delays   ; Enabled                                             ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                   ;
++---------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------------+
+; Clock Name                                  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                         ;
++---------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------------+
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Array_KeyBoard:Array_KeyBoard_uut|clk_200hz } ;
+; clk_in                                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_in }                                      ;
++---------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Fmax Summary                                              ;
++-----------+-----------------+---------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                  ; Note ;
++-----------+-----------------+---------------------------------------------+------+
+; 214.0 MHz ; 214.0 MHz       ; clk_in                                      ;      ;
+; 250.5 MHz ; 250.5 MHz       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;      ;
++-----------+-----------------+---------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------------+
+; Slow 1200mV 100C Model Setup Summary                                  ;
++---------------------------------------------+---------+---------------+
+; Clock                                       ; Slack   ; End Point TNS ;
++---------------------------------------------+---------+---------------+
+; clk_in                                      ; -11.352 ; -253.270      ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.496  ; -22.435       ;
++---------------------------------------------+---------+---------------+
+
+
++---------------------------------------------------------------------+
+; Slow 1200mV 100C Model Hold Summary                                 ;
++---------------------------------------------+-------+---------------+
+; Clock                                       ; Slack ; End Point TNS ;
++---------------------------------------------+-------+---------------+
+; clk_in                                      ; 0.390 ; 0.000         ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.469 ; 0.000         ;
++---------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV 100C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV 100C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------+
+; Slow 1200mV 100C Model Minimum Pulse Width Summary                   ;
++---------------------------------------------+--------+---------------+
+; Clock                                       ; Slack  ; End Point TNS ;
++---------------------------------------------+--------+---------------+
+; clk_in                                      ; -3.000 ; -39.000       ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.000 ; -24.000       ;
++---------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.192 ; 3.450 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.303 ; 2.490 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.192 ; 3.450 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.147 ; 3.284 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.335 ; 1.476 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                           ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall   ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.567 ; -0.709 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.724 ; -0.880 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.123 ; -1.313 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.749 ; -0.901 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.567 ; -0.709 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                               ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 10.231 ; 9.752 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.880  ; 7.832 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.846  ; 7.893 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.495  ; 7.529 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 10.231 ; 9.752 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 7.440  ; 7.468 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.166 ; 7.200 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.538 ; 7.490 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.503 ; 7.550 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.166 ; 7.200 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 9.902 ; 9.424 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 7.138 ; 7.167 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Fmax Summary                                               ;
++------------+-----------------+---------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                  ; Note ;
++------------+-----------------+---------------------------------------------+------+
+; 240.96 MHz ; 240.96 MHz      ; clk_in                                      ;      ;
+; 262.74 MHz ; 262.74 MHz      ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;      ;
++------------+-----------------+---------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------------------+
+; Slow 1200mV -40C Model Setup Summary                                 ;
++---------------------------------------------+--------+---------------+
+; Clock                                       ; Slack  ; End Point TNS ;
++---------------------------------------------+--------+---------------+
+; clk_in                                      ; -9.940 ; -220.670      ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.403 ; -21.121       ;
++---------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------+
+; Slow 1200mV -40C Model Hold Summary                                 ;
++---------------------------------------------+-------+---------------+
+; Clock                                       ; Slack ; End Point TNS ;
++---------------------------------------------+-------+---------------+
+; clk_in                                      ; 0.335 ; 0.000         ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.427 ; 0.000         ;
++---------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------+
+; Slow 1200mV -40C Model Minimum Pulse Width Summary                   ;
++---------------------------------------------+--------+---------------+
+; Clock                                       ; Slack  ; End Point TNS ;
++---------------------------------------------+--------+---------------+
+; clk_in                                      ; -3.000 ; -39.000       ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.000 ; -24.000       ;
++---------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.933 ; 3.112 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.134 ; 2.274 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.933 ; 3.112 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.884 ; 2.998 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.305 ; 1.337 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                           ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall   ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.627 ; -0.682 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.775 ; -0.826 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.152 ; -1.182 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.802 ; -0.845 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.627 ; -0.682 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                              ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 8.513 ; 8.278 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.990 ; 6.730 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.746 ; 6.991 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.441 ; 6.664 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 8.513 ; 8.278 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 6.321 ; 6.592 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.131 ; 6.353 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.666 ; 6.409 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.424 ; 6.667 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 6.131 ; 6.353 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 8.203 ; 7.967 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 6.038 ; 6.307 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Fast 1200mV -40C Model Setup Summary                                 ;
++---------------------------------------------+--------+---------------+
+; Clock                                       ; Slack  ; End Point TNS ;
++---------------------------------------------+--------+---------------+
+; clk_in                                      ; -4.332 ; -85.833       ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.238 ; -2.777        ;
++---------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------+
+; Fast 1200mV -40C Model Hold Summary                                 ;
++---------------------------------------------+-------+---------------+
+; Clock                                       ; Slack ; End Point TNS ;
++---------------------------------------------+-------+---------------+
+; clk_in                                      ; 0.140 ; 0.000         ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.170 ; 0.000         ;
++---------------------------------------------+-------+---------------+
+
+
+-------------------------------------------
+; Fast 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------+
+; Fast 1200mV -40C Model Minimum Pulse Width Summary                   ;
++---------------------------------------------+--------+---------------+
+; Clock                                       ; Slack  ; End Point TNS ;
++---------------------------------------------+--------+---------------+
+; clk_in                                      ; -3.000 ; -45.897       ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.000 ; -24.000       ;
++---------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.144 ; 1.579 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.651 ; 1.181 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.020 ; 1.571 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.144 ; 1.579 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.257 ; 0.825 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                           ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall   ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.065  ; -0.479 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.025 ; -0.584 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.172 ; -0.762 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.037 ; -0.599 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.065  ; -0.479 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                              ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 4.718 ; 4.397 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.326 ; 3.382 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.387 ; 3.332 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.216 ; 3.177 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 4.718 ; 4.397 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 3.150 ; 3.070 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.095 ; 3.058 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.201 ; 3.254 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.260 ; 3.206 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.095 ; 3.058 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 4.598 ; 4.277 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 3.037 ; 2.960 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                        ;
++----------------------------------------------+----------+-------+----------+---------+---------------------+
+; Clock                                        ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack                             ; -11.352  ; 0.140 ; N/A      ; N/A     ; -3.000              ;
+;  Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -1.496   ; 0.170 ; N/A      ; N/A     ; -1.000              ;
+;  clk_in                                      ; -11.352  ; 0.140 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS                              ; -275.705 ; 0.0   ; 0.0      ; 0.0     ; -69.897             ;
+;  Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -22.435  ; 0.000 ; N/A      ; N/A     ; -24.000             ;
+;  clk_in                                      ; -253.270 ; 0.000 ; N/A      ; N/A     ; -45.897             ;
++----------------------------------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.192 ; 3.450 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 2.303 ; 2.490 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.192 ; 3.450 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.147 ; 3.284 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 1.335 ; 1.476 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                           ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall   ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+; col[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.065  ; -0.479 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.025 ; -0.584 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.172 ; -0.762 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; -0.037 ; -0.599 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  col[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 0.065  ; -0.479 ; Fall       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
++-----------+---------------------------------------------+--------+--------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                               ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise   ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 10.231 ; 9.752 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.880  ; 7.832 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.846  ; 7.893 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 7.495  ; 7.529 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 10.231 ; 9.752 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 7.440  ; 7.468 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+--------+-------+------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; Data Port ; Clock Port                                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference                             ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+; row[*]    ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.095 ; 3.058 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[0]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.201 ; 3.254 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[1]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.260 ; 3.206 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[2]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 3.095 ; 3.058 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+;  row[3]   ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 4.598 ; 4.277 ; Rise       ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ;
+; piano_out ; clk_in                                      ; 3.037 ; 2.960 ; Rise       ; clk_in                                      ;
++-----------+---------------------------------------------+-------+-------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin          ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; row[0]       ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; row[1]       ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; row[2]       ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; row[3]       ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; piano_out    ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Input Transition Times                                                          ;
++---------------------+-----------------------+-----------------+-----------------+
+; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+-----------------------+-----------------+-----------------+
+; rst_n_in            ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; clk_in              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; col[1]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; col[2]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; col[0]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; col[3]              ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TMS~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TCK~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TDI~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_CONFIG_SEL~ ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nCONFIG~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nSTATUS~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_CONF_DONE~  ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
++---------------------+-----------------------+-----------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; row[0]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.19 V              ; -0.12 V             ; 0.339 V                              ; 0.337 V                              ; 4.77e-10 s                  ; 6.6e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.19 V             ; -0.12 V            ; 0.339 V                             ; 0.337 V                             ; 4.77e-10 s                 ; 6.6e-10 s                  ; No                        ; No                        ;
+; row[1]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.19 V              ; -0.12 V             ; 0.339 V                              ; 0.337 V                              ; 4.77e-10 s                  ; 6.6e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.19 V             ; -0.12 V            ; 0.339 V                             ; 0.337 V                             ; 4.77e-10 s                 ; 6.6e-10 s                  ; No                        ; No                        ;
+; row[2]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.19 V              ; -0.12 V             ; 0.339 V                              ; 0.337 V                              ; 4.77e-10 s                  ; 6.6e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.19 V             ; -0.12 V            ; 0.339 V                             ; 0.337 V                             ; 4.77e-10 s                 ; 6.6e-10 s                  ; No                        ; No                        ;
+; row[3]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.1 V               ; -0.00918 V          ; 0.311 V                              ; 0.283 V                              ; 4.36e-09 s                  ; 5.12e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.1 V              ; -0.00918 V         ; 0.311 V                             ; 0.283 V                             ; 4.36e-09 s                 ; 5.12e-09 s                 ; No                        ; No                        ;
+; piano_out    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.19 V              ; -0.12 V             ; 0.339 V                              ; 0.337 V                              ; 4.77e-10 s                  ; 6.6e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.19 V             ; -0.12 V            ; 0.339 V                             ; 0.337 V                             ; 4.77e-10 s                 ; 6.6e-10 s                  ; No                        ; No                        ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.03e-08 V                   ; 3.19 V              ; -0.12 V             ; 0.339 V                              ; 0.337 V                              ; 4.77e-10 s                  ; 6.6e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 2.03e-08 V                  ; 3.19 V             ; -0.12 V            ; 0.339 V                             ; 0.337 V                             ; 4.77e-10 s                 ; 6.6e-10 s                  ; No                        ; No                        ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; row[0]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.13 V              ; -0.0538 V           ; 0.304 V                              ; 0.318 V                              ; 6.92e-10 s                  ; 8.66e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.13 V             ; -0.0538 V          ; 0.304 V                             ; 0.318 V                             ; 6.92e-10 s                 ; 8.66e-10 s                 ; No                        ; No                        ;
+; row[1]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.13 V              ; -0.0538 V           ; 0.304 V                              ; 0.318 V                              ; 6.92e-10 s                  ; 8.66e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.13 V             ; -0.0538 V          ; 0.304 V                             ; 0.318 V                             ; 6.92e-10 s                 ; 8.66e-10 s                 ; No                        ; No                        ;
+; row[2]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.13 V              ; -0.0538 V           ; 0.304 V                              ; 0.318 V                              ; 6.92e-10 s                  ; 8.66e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.13 V             ; -0.0538 V          ; 0.304 V                             ; 0.318 V                             ; 6.92e-10 s                 ; 8.66e-10 s                 ; No                        ; No                        ;
+; row[3]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.09 V              ; -0.00353 V          ; 0.284 V                              ; 0.303 V                              ; 5.95e-09 s                  ; 6.84e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.09 V             ; -0.00353 V         ; 0.284 V                             ; 0.303 V                             ; 5.95e-09 s                 ; 6.84e-09 s                 ; No                        ; No                        ;
+; piano_out    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.13 V              ; -0.0538 V           ; 0.304 V                              ; 0.318 V                              ; 6.92e-10 s                  ; 8.66e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.13 V             ; -0.0538 V          ; 0.304 V                             ; 0.318 V                             ; 6.92e-10 s                 ; 8.66e-10 s                 ; No                        ; No                        ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 8.84e-06 V                   ; 3.13 V              ; -0.0538 V           ; 0.304 V                              ; 0.318 V                              ; 6.92e-10 s                  ; 8.66e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 8.84e-06 V                  ; 3.13 V             ; -0.0538 V          ; 0.304 V                             ; 0.318 V                             ; 6.92e-10 s                 ; 8.66e-10 s                 ; No                        ; No                        ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; row[0]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.64 V              ; -0.0317 V           ; 0.485 V                              ; 0.079 V                              ; 2.97e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 7.66e-08 V                  ; 3.64 V             ; -0.0317 V          ; 0.485 V                             ; 0.079 V                             ; 2.97e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; row[1]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.64 V              ; -0.0317 V           ; 0.485 V                              ; 0.079 V                              ; 2.97e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 7.66e-08 V                  ; 3.64 V             ; -0.0317 V          ; 0.485 V                             ; 0.079 V                             ; 2.97e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; row[2]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.64 V              ; -0.0317 V           ; 0.485 V                              ; 0.079 V                              ; 2.97e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 7.66e-08 V                  ; 3.64 V             ; -0.0317 V          ; 0.485 V                             ; 0.079 V                             ; 2.97e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; row[3]       ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.49 V              ; -0.0114 V           ; 0.352 V                              ; 0.3 V                                ; 3.13e-09 s                  ; 3.75e-09 s                  ; No                         ; No                         ; 3.46 V                      ; 7.66e-08 V                  ; 3.49 V             ; -0.0114 V          ; 0.352 V                             ; 0.3 V                               ; 3.13e-09 s                 ; 3.75e-09 s                 ; No                        ; No                        ;
+; piano_out    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.64 V              ; -0.0317 V           ; 0.485 V                              ; 0.079 V                              ; 2.97e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 7.66e-08 V                  ; 3.64 V             ; -0.0317 V          ; 0.485 V                             ; 0.079 V                             ; 2.97e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 7.66e-08 V                   ; 3.64 V              ; -0.0317 V           ; 0.485 V                              ; 0.079 V                              ; 2.97e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 7.66e-08 V                  ; 3.64 V             ; -0.0317 V          ; 0.485 V                             ; 0.079 V                             ; 2.97e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                       ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+; From Clock                                  ; To Clock                                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 8        ; 0        ; 16       ; 0        ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; clk_in                                      ; 1        ; 61089    ; 0        ; 0        ;
+; clk_in                                      ; clk_in                                      ; 922      ; 0        ; 0        ; 0        ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                        ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+; From Clock                                  ; To Clock                                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; 8        ; 0        ; 16       ; 0        ;
+; Array_KeyBoard:Array_KeyBoard_uut|clk_200hz ; clk_in                                      ; 1        ; 61089    ; 0        ; 0        ;
+; clk_in                                      ; clk_in                                      ; 922      ; 0        ; 0        ; 0        ;
++---------------------------------------------+---------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 76    ; 76   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Wed Dec 21 17:07:50 2016
+Info: Command: quartus_sta Electric_Piano -c Electric_Piano
+Info: qsta_default_script.tcl version: #11
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Electric_Piano.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_in clk_in
+    Info (332105): create_clock -period 1.000 -name Array_KeyBoard:Array_KeyBoard_uut|clk_200hz Array_KeyBoard:Array_KeyBoard_uut|clk_200hz
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 100C Model
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -11.352
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -11.352            -253.270 clk_in 
+    Info (332119):    -1.496             -22.435 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332146): Worst-case hold slack is 0.390
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.390               0.000 clk_in 
+    Info (332119):     0.469               0.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -39.000 clk_in 
+    Info (332119):    -1.000             -24.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Slow 1200mV -40C Model
+Info (334003): Started post-fitting delay annotation
+Warning (12535): Advance timing characteristics for device 10M02SCM153I7G. Delays will change in future releases.
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.940
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -9.940            -220.670 clk_in 
+    Info (332119):    -1.403             -21.121 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332146): Worst-case hold slack is 0.335
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.335               0.000 clk_in 
+    Info (332119):     0.427               0.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -39.000 clk_in 
+    Info (332119):    -1.000             -24.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast 1200mV -40C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.332
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.332             -85.833 clk_in 
+    Info (332119):    -0.238              -2.777 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332146): Worst-case hold slack is 0.140
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.140               0.000 clk_in 
+    Info (332119):     0.170               0.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -45.897 clk_in 
+    Info (332119):    -1.000             -24.000 Array_KeyBoard:Array_KeyBoard_uut|clk_200hz 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 727 megabytes
+    Info: Processing ended: Wed Dec 21 17:07:55 2016
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+
