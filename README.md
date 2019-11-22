@@ -14,8 +14,8 @@
   + tone：通过编码方式将键盘的操作信息译码成对应的PWM周期信息。
   
   + PWM：根据PWM周期信息产生对应的PWM脉冲信号。
-  ![top-down设计]()
-  ![模块结构设计]()
+  ![top-down设计](https://github.com/ghuaerm/FPGA_piano/blob/master/image/1.png)
+  ![模块结构设计](https://github.com/ghuaerm/FPGA_piano/blob/master/image/2.png)
 ## 实验步骤
 双击打开Quartus Prime工具软件；
 
@@ -33,14 +33,14 @@
 观察设计运行结果。
 ## 系统整体实现
 综合后的设计框图如图所示：
-  ![RTL电路图]()
+  ![RTL电路图](https://github.com/ghuaerm/FPGA_piano/blob/master/image/3.png)
 
   Assignments → Pin_Planener,然后根据项目需求分配引脚，引脚分配对照矩形键盘原理图和Alert开发板引脚图完成分配问题。
-  ![矩形键盘原理图]()
-  ![Alert开发板引脚]()
+  ![矩形键盘原理图](https://github.com/ghuaerm/FPGA_piano/blob/master/image/5.png)
+  ![Alert开发板引脚](https://github.com/ghuaerm/FPGA_piano/blob/master/image/6.png)
   引脚分配操作如下图：
-  ![引脚分配操作]()
+  ![引脚分配操作](https://github.com/ghuaerm/FPGA_piano/blob/master/image/7.png)
 
   然后对设计整体编译并生成配置文件.sof文件；点击Tools → Programmer打开配置工具添加配置文件进行下载；程序到此烧录完成。按动矩阵按键听蜂鸣器发出的声音，16个按键对应16个音节。
-  ![实验结果]()
+  ![实验结果](https://github.com/ghuaerm/FPGA_piano/blob/master/image/4.png)
 
